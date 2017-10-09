@@ -34,8 +34,8 @@ then
   while true
   do
 
-      echo Hi
-      sleep 10
+    echo Hi
+    sleep 10
 
   done
 
@@ -71,22 +71,22 @@ then
   if [[ $(pgrep -cf 'bkgd.sh -daemon') -eq 1 ]]
   then
 
-      printf '\nA \"bkgd.sh -daemon\" instance is already running\n\n'
+    printf '\nA \"bkgd.sh -daemon\" instance is already running\n\n'
 
   else
 
-      export tmpvar=xyz
+    export tmpvar=xyz
 
-      nohup bkgd.sh -daemon 2> /dev/null &
+    nohup bkgd.sh -daemon 2> /dev/null &
 
-      sleep 1
+    sleep 1
 
-      if [[ $(pgrep -cf 'bkgd.sh -daemon') -eq 1 ]]
-      then
+    if [[ $(pgrep -cf 'bkgd.sh -daemon') -eq 1 ]]
+    then
 
-          printf '\n\"bkgd.sh -daemon\" has started\n\n'
+      printf '\n\"bkgd.sh -daemon\" has started\n\n'
 
-      fi
+    fi
 
   fi
 
@@ -100,18 +100,18 @@ then
   if [[ $(pgrep -cf 'bkgd.sh -daemon') -eq 1 ]]
   then
 
-      pkill -f 'bkgd.sh -daemon'
+    pkill -f 'bkgd.sh -daemon'
 
-      if [[ $(pgrep -cf 'bkgd.sh -daemon') -eq 0 ]]
-      then
+    if [[ $(pgrep -cf 'bkgd.sh -daemon') -eq 0 ]]
+    then
 
-          printf '\n\"bkgd.sh -daemon\" has been shutdown\n\n'
+      printf '\n\"bkgd.sh -daemon\" has been shutdown\n\n'
 
-      fi
+    fi
 
   else
 
-      printf '\nA \"bkgd.sh -daemon\" instance is not currently running\n\n'
+    printf '\nA \"bkgd.sh -daemon\" instance is not currently running\n\n'
 
   fi
 
